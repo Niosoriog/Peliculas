@@ -13,6 +13,8 @@ y vamos a ir a la carpeta de frontend y abrimos index.html.
 
 Una pequeña muestra : 
 <img width="1363" height="555" alt="image" src="https://github.com/user-attachments/assets/b8cbff5c-f984-4554-9889-1618c4ba0f3e" />
+<img width="1330" height="737" alt="image" src="https://github.com/user-attachments/assets/40db7ac3-d6ef-47ae-9ae2-6d019a68e9c7" />
+No se pueden repetir correos, la contraseña se guarda con el hash y no en texto plano, y no deja hacer nada si el usuario no se autentica o inicia sesion primero.
 <img width="1356" height="378" alt="image" src="https://github.com/user-attachments/assets/3cd04884-d998-427a-871e-217ceb4d8045" />
 <img width="1290" height="672" alt="image" src="https://github.com/user-attachments/assets/c3222aba-94f8-4f8c-a12f-fe780b27c42d" />
 
