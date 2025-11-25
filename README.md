@@ -18,4 +18,6 @@ No se pueden repetir correos, la contraseña se guarda con el hash y no en texto
 <img width="1356" height="378" alt="image" src="https://github.com/user-attachments/assets/3cd04884-d998-427a-871e-217ceb4d8045" />
 <img width="1290" height="672" alt="image" src="https://github.com/user-attachments/assets/c3222aba-94f8-4f8c-a12f-fe780b27c42d" />
 
-
+Usuario de prueba: 
+nicolas@example.com
+123456
