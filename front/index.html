@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo de Películas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind por CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+  <div class="max-w-5xl mx-auto py-8 px-4">
+
+    <!-- Header Principal -->
+    <header class="flex items-center justify-between mb-8">
+      <h1 class="text-3xl font-bold text-yellow-400">
+         Catálogo de Películas
+      </h1>
+      <div class="flex items-center gap-4">
+        <span id="auth-status" class="text-sm text-gray-300">No autenticado</span>
+        <button
+          id="logout-btn"
+          class="hidden bg-red-500 hover:bg-red-400 text-white text-sm font-semibold px-3 py-1 rounded transition"
+        >
+          Cerrar sesión
+        </button>
+      </div>
+    </header>
+
+    <!-- Sección Login / Registro -->
+    <section
+      id="login-section"
+      class="bg-gray-800 rounded-lg p-6 mb-8 shadow-lg"
+    >
+      <h2 id="login-title" class="text-xl font-semibold mb-4">Iniciar sesión</h2>
+      <form id="login-form" class="space-y-4">
+
+        <div id="name-group" class="hidden">
+          <label class="block text-sm mb-1" for="name">Nombre</label>
+          <input
+            id="name"
+            type="text"
+            class="w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            placeholder="Tu nombre"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm mb-1" for="email">Correo</label>
+          <input
+            id="email"
+            type="email"
+            class="w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            placeholder="tucorreo@ejemplo.com"
+            required
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm mb-1" for="password">Contraseña</label>
+          <input
+            id="password"
+            type="password"
+            class="w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            placeholder="••••••••"
+            required
+          />
+        </div>
+
+        <div id="password-confirm-group" class="hidden">
+          <label class="block text-sm mb-1" for="password-confirm">
+            Confirmar contraseña
+          </label>
+          <input
+            id="password-confirm"
+            type="password"
+            class="w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            placeholder="Repite la contraseña"
+          />
+        </div>
+
+        <button
+          type="submit"
+          id="login-submit"
+          class="bg-yellow-400 text-gray-900 px-4 py-2 rounded font-semibold hover:bg-yellow-300 transition"
+        >
+          Ingresar
+        </button>
+
+        <button
+          type="button"
+          id="toggle-mode"
+          class="block text-sm text-yellow-400 mt-2 hover:underline"
+        >
+          ¿No tienes cuenta? Crear cuenta
+        </button>
+
+        <p id="login-error" class="text-red-400 text-sm mt-2 hidden"></p>
+      </form>
+    </section>
+
+    <!-- Sección principal (App) -->
+    <section
+      id="app-section"
+      class="hidden space-y-8"
+    >
+      <!-- Formulario para agregar película -->
+      <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+        <h2 class="text-xl font-semibold mb-4">Agregar película</h2>
+        <form id="movie-form" class="flex flex-col md:flex-row gap-4 items-end">
+          <div class="flex-1">
+            <label class="block text-sm mb-1" for="movie-title">Título</label>
+            <input
+              id="movie-title"
+              type="text"
+              class="w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              placeholder="Inception, Interstellar, etc."
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="bg-green-400 text-gray-900 px-4 py-2 rounded font-semibold hover:bg-green-300 transition"
+          >
+            Guardar
+          </button>
+        </form>
+        <p class="text-xs text-gray-400 mt-2">
+          El sistema consultará OMDb para completar director, año, género y póster.
+        </p>
+        <p id="movie-error" class="text-red-400 text-sm mt-2 hidden"></p>
+      </div>
+
+      <!-- Listado de películas -->
+      <div>
+        <h2 class="text-xl font-semibold mb-4">Mis películas</h2>
+        <div
+          id="movies-grid"
+          class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+        >
+          <!-- Aquí se insertan tarjetas dinámicamente -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
